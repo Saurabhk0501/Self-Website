@@ -1,4 +1,5 @@
-// ---
+// Existing code...
+
 const hamMenuBtn = document.querySelector('.header__main-ham-menu-cont')
 const smallMenu = document.querySelector('.header__sm-menu')
 const headerHamMenuBtn = document.querySelector('.header__main-ham-menu')
@@ -30,9 +31,19 @@ for (let i = 0; i < headerSmallMenuLinks.length; i++) {
   })
 }
 
-// ---
 const headerLogoConatiner = document.querySelector('.header__logo-container')
 
 headerLogoConatiner.addEventListener('click', () => {
   location.href = 'index.html'
 })
+
+// New code for PDF download functionality
+document.getElementById("downloadResume").addEventListener("click", function() {
+  var pdfUrl = "resume.pdf";
+  var downloadLink = document.createElement("a");
+  downloadLink.href = pdfUrl;
+  downloadLink.download = "resume.pdf";
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+});
